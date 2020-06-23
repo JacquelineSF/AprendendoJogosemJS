@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(31, 161, 161);
+    color: white;
+    text-align: center;
+
+}
+canvas{
+border: solid 1px;
+background-color: white;
+
+}
+section{
+
+    text-align: center;
+}
+footer{
+    text-align: center;
+    font-style: italic;
+}
