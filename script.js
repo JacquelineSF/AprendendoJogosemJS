@@ -8,7 +8,8 @@ let posx = 50
 let posy = 50
 //para a cor quando for colidido
 let objColor = "#00f"
-
+var blockX = canv.width / 2 - 25
+var blockY = canv.height/2 - 25
 
 let mvLeft = mvUp = mvRigth = mvDown = false
 
@@ -31,15 +32,24 @@ if(mvDown){
 }
 }
 
+// algo é colidido quando tenta ultrapassar o limite do outro, entao voce coloca a posição de cada objeto e o que vai acontecer quando eles colidirem.
+//sempre verificar se digitou as variaveia da maneira correta.d
+function colide(){
+    if(posx + SIZE > blockX && posx < blockX +SIZE && posy + SIZE > blockY && posy < blockY + SIZE){
+
+        objColor = "#f00"
+
+    }else{
+        objColor = "#00f"
+    }
+}
+
 window.addEventListener('keydown', pressionebotao,false)
 window.addEventListener('keyup',soltandobotao,false)
 
 
 
 function pressionebotao(e){
-   
- 
-  
     var key = e.keyCode
     switch(key){
         case UP:
@@ -79,12 +89,20 @@ function soltandobotao(e){
 
 function update(){
     updateblock()
+    colide()
 }
 
 //para o desenho, o q vai interagir na tela
 function draw(){
+    //Aqui fica todos os desenhos, tudo q aparecerá na tela
+    //para limpar os retangulos q ficarem pra tras
     ctx.clearRect(0,0,canv.width,canv.height)
+    ctx.fillStyle = "#000"
+    ctx.fillRect(blockX,blockY,SIZE,SIZE)
+    ctx.fillStyle = objColor
     ctx.fillRect(posx,posy,SIZE,SIZE)
+
+
 
 }
 //vai ficar repetindo 60x por segundo
