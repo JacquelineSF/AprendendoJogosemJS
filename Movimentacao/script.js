@@ -11,15 +11,20 @@ let pos1 = {
 
 function Move(){
     if(mvleft){
+        if(pos1.x > 0){
         pos1.x--
-    }
+    }}
     if(mvrigth){
-        pos1.x++
-    }
+        if(pos1.x < 550){
+            pos1.x++
+       } }
+        
     if(mvup){
+        if(pos1.y >0){
         pos1.y--
-    }
+    }}
     if(mvdown){
+        if(pos1.y < 350)
         pos1.y++
     }
 }   
