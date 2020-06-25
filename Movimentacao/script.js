@@ -11,7 +11,7 @@ let pos1 = {
 
 function Move(){
     if(mvleft){
-        if(pos1.x > 0){
+        if(pos1.x > 0){ //para delimitar a area de movimento
         pos1.x--
     }}
     if(mvrigth){
