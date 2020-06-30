@@ -3,7 +3,7 @@ window.onload = function(){
     let canv = document.querySelector("canvas")
     let contxt = canv.getContext("2d")
     let spriteSheet = new Image()
-    spriteSheet.src = "imagem/imgsprite.png"
+    spriteSheet.src = "imagem/img.png"
     let person = new Sprite(spriteSheet)
 
 
@@ -21,7 +21,7 @@ function Inicio(){
 
     }
     function draw(){
-        person.draw(context)
+        person.draw(contxt)
 
     }
 
